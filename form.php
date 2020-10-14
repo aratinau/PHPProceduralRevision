@@ -17,30 +17,11 @@
 	</head>
 	<body class="">
         <div class="container">
-              <h1>Hello</h1>
-              <?php 
-                echo '<h2>$_GET</h2>';
-                print_r($_GET);
-                $tab_get = array();
-                $tab_get["cle"] = "valeur";
-
-                echo '<br />';
-
-                print_r($_POST);
-                $_POST["cle_post"] = "pre remplie";
-              ?>
-
-                <form action="" method="post">
-                    <input type="text" name="cle_post" value="pre remplie" />
-                    <?php 
-                        // au moment ou on va submit le formulaire
-                    ?>
+              <h1>Form</h1>
+                <form action="form.php" method="post">
+                    <input type="text" name="" value="" />
                     <input type="submit" />
                 </form>
-
-                <?php
-                    // difference simple et double quote
-                ?>
         </div>
 	</body>
 </html>
