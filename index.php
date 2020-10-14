@@ -30,8 +30,18 @@
                 $_POST["cle_post"] = "pre remplie";
               ?>
 
-                <form action="" method="post">
+                <form action="index.php" method="post">
                     <input type="text" name="cle_post" value="pre remplie" />
+                    <?php 
+                        // au moment ou on va submit le formulaire
+                    ?>
+                    <input type="submit" />
+                </form>
+                
+                <hr />
+                
+                <form action="index.php" method="get">
+                    <input type="text" name="cle_get" value="pre remplie de cle get" />
                     <?php 
                         // au moment ou on va submit le formulaire
                     ?>
@@ -40,6 +50,10 @@
 
                 <?php
                     // difference simple et double quote
+                    $fruit = "abricot";
+                    echo "j'aime le fruit $fruit";
+                    echo "<br />";
+                    echo 'j\'aime le fruit $fruit';
                 ?>
         </div>
 	</body>
