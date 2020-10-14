@@ -1,3 +1,26 @@
+<?php
+
+if (isset($_POST["to"]) && isset($_POST["subject"]) && isset($_POST["message"])) {
+    if (!empty($_POST["to"]) && !empty($_POST["subject"]) && !empty($_POST["message"])) {
+        $to      = $_POST["to"];
+        $subject = $_POST["subject"];
+        $message = $_POST["message"];
+        $headers = array(
+                'From' => 'from@sfr.fr',
+                'Reply-To' => 'from@sfr.fr',
+                    'X-Mailer' => 'PHP/' . phpversion()
+                );
+
+        $state = mail($to, $subject, $message, $headers);
+        if ($state === true) {
+            echo "message bien envoyé";
+        } else {
+            echo "erreur - message non envoyé";
+        }
+    }
+}
+
+?>
 <!doctype html>
 <html lang="en" class="">
 	<head>
@@ -19,7 +42,14 @@
         <div class="container">
               <h1>Form</h1>
                 <form action="form.php" method="post">
-                    <input type="text" name="" value="" />
+                    to
+                    <input type="text" name="to" value="" />
+                    <br />
+                    subject
+                    <input type="text" name="subject" value="" />
+                    <br />
+                    message
+                    <textarea name="message"></textarea>
                     <input type="submit" />
                 </form>
         </div>
